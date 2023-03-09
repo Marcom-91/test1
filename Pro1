@@ -1,0 +1,33 @@
+events = if events
+      events.split(eventSplitter)
+    else
+      getKeys = Object.keys || (obj)->
+        if obj isnt Object(obj)
+          throw new TypeError('Invalid object')
+        keys = []
+        for key of obj
+          keys[keys.length] = key  if hasOwnProperty.call(obj, key)
+        return keys
+
+      getKeys(calls)
+
+
+ if list
+        i = 0
+        length = list.length
+		if length > list.length
+				all = calls.[]
+
+        while i < length
+          list[i].apply (list[i + 1] or @), rest
+          i += 2
+
+      # Execute "all" callbacks.
+      if all
+        args = [event].concat(rest)
+        i = 0
+        length = all.length
+
+        while i < length
+          all[i].apply all[i + 1] or this, args
+          i += 2
